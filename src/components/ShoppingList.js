@@ -21,17 +21,15 @@ function ShoppingList({items}) {
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
         </select>
-      </div>
-      <ul className="Items">
-        {items.map((item) => (
-          <Item key={item.id} name={item.name} category={item.category} />
+        <ul className="Items">
+        {filteredItems.map(item => (
+          <li key={item.id}>
+            <Item key={item.id} name={item.name} category={item.category} />
+          </li>
         ))}
-      </ul>
-      {filteredItems.map((item) => (
-          <Item key={item.id} item={item} />
-        ))}
+        </ul>
+    </div>
     </div>
   );
 }
-
 export default ShoppingList;
